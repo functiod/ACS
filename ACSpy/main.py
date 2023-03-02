@@ -69,7 +69,13 @@ def step_by_step_axis_1(hcomm, axis, angle_start, angle_end, velocity):
 #axis initialization 
 init_hcomm(hcomm, axis_0)
 init_hcomm(hcomm, axis_1)
+print(acsc.getFPosition(hcomm, 0))
+print(acsc.getFPosition(hcomm, 1))
 
+acsc.setFPosition(hcomm, axis_0, 0.00000)
+
+
+'''
 if (round(acsc.getFPosition(hcomm, axis_0)) != start_ax_0) or round(acsc.getFPosition(hcomm, axis_1)) != start_ax_1:
     event_orient_motion(hcomm, axis_0, acsc.getFPosition(hcomm, axis_0), start_ax_0, velocity)
     event_orient_motion(hcomm, axis_1, acsc.getFPosition(hcomm, axis_1), start_ax_1, velocity)
@@ -83,7 +89,7 @@ while flag:
         flag = 1
     else:
         flag = 0
-
+'''
 
 acsc.disable(hcomm, axis_0)
 acsc.disable(hcomm, axis_1)
